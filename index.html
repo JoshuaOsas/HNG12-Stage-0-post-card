@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="post-card">
+        <div class="post-card-header">
+            <img data-testid="profilePicture" src="My post card pic.jpeg" alt="Profile Photo" class="profile-photo">
+            <h1 data-testid="fullName">Obayagbona Osaghae Joshua</h1>
+            <h2 data-testid="jobTitle">Frontend Developer</h2>
+        </div>
+        <div class="post-card-body">
+            <p data-testid="shortBio">Passionate about creating engaging and user-friendly web experiences. Proficient in HTML, CSS, and JavaScript. Always eager to learn and explore new technologies.</p>
+            <p data-testid="currentLocation"><strong>Location:</strong> Lagos, Nigeria</p>
+            <p data-testid="emailAddress"><strong>Email:</strong> obayagbonaosaghaejoshua@gmail.com</p>
+        </div>
+        <div class="post-card-footer">
+            <a data-testid="socialLinks" href="https://x.com/o_s_a_s_" target="_blank">Twitter</a>
+            <a data-testid="socialLinks" href="https://www.linkedin.com/in/osaghae-obayagbona-16b785231" target="_blank">LinkedIn</a>
+            <a data-testid="socialLinks" href="https://github.com/JoshuaOsas" target="_blank">GitHub</a>
+            <div class="current-time">
+                <span data-testid="currentTimeUTC" id="utcTime"></span>
+            </div>
+        </div>
+    </div>
+    <script data-testid="currentTimeUTC">
+        function updateUTCTime() {
+            const now = new Date();
+            const utcString = now.toUTCString();
+            document.getElementById('utcTime').textContent = utcString;
+        }
+        updateUTCTime();
+        setInterval(updateUTCTime, 1000); // Update every second
+    </script>
+</body>
